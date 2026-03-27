@@ -12,11 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="90dp"
         android:backgroundTint="@color/white"
-        android:contentDescription="Adicionar task"
         android:clickable="true"
-        android:tint="@color/color_default"
+        android:contentDescription="Adicionar task"
         android:src="@drawable/ic_add"
+        android:tint="@color/color_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

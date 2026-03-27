@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.akilanny.task.R
 import com.akilanny.task.databinding.FragmentLoginBinding
@@ -26,7 +27,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun initListener() {
-        binding.buttonLogin.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             findNavController().navigate(R.id.action_global_homeFragment)
         }
         binding.btnRegister.setOnClickListener {
@@ -35,6 +36,22 @@ class LoginFragment : Fragment() {
 
         binding.btnRecover.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_recoverAccountFragment)
+        }
+    }
+
+    private fun validateData(){
+        val email = binding.editEmail.text.toString().trim()
+        val senha = binding.editPassword.text.toString().trim()
+
+        if (email.isNotBlank()){
+            if(senha.isNotBlank()){
+                findNavController().navigate(R.id.action_global_homeFragment)
+
+            }else{
+                Toast.makeText(requireContext(), "Preencha a senha!", Toast.LENGTH_SHORT).show()
+            }
+        }else{
+            Toast.makeText(requireContext(), "Preencha seu email!", Toast.LENGTH_SHORT).show()
         }
     }
 

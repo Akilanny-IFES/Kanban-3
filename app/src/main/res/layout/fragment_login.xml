@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.auth.LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:id="@+id/LiLayout"
         android:layout_width="0dp"
@@ -25,6 +24,7 @@
             android:textColor="@color/white" />
 
         <EditText
+            android:id="@+id/editEmail"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="4dp"
@@ -41,6 +41,7 @@
             android:textColor="@color/white" />
 
         <EditText
+            android:id="@+id/editPassword"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="4dp"
@@ -50,7 +51,7 @@
             android:background="@drawable/bg_edit_text"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonLogin"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -85,6 +86,7 @@
         </LinearLayout>
 
         <ProgressBar
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
