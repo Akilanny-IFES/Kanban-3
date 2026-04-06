@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.akilanny.task.R
 import com.akilanny.task.databinding.FragmentLoginBinding
+import com.akilanny.task.util.showBottomSheet
+
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
@@ -48,13 +50,12 @@ class LoginFragment : Fragment() {
                 findNavController().navigate(R.id.action_global_homeFragment)
 
             }else{
-                Toast.makeText(requireContext(), "Preencha a senha!", Toast.LENGTH_SHORT).show()
+                showBottomSheet(message = R.string.password_empty)
             }
         }else{
-            Toast.makeText(requireContext(), "Preencha seu email!", Toast.LENGTH_SHORT).show()
+            showBottomSheet(message = R.string.email_empty)
         }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

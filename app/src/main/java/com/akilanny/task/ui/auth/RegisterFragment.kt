@@ -9,6 +9,8 @@ import android.widget.Toast
 import com.akilanny.task.R
 import com.akilanny.task.databinding.FragmentRegisterBinding
 import com.akilanny.task.util.initToolbar
+import com.akilanny.task.util.showBottomSheet
+
 
 class RegisterFragment : Fragment() {
     private var _binding: FragmentRegisterBinding? = null
@@ -32,17 +34,17 @@ class RegisterFragment : Fragment() {
     }
 
     private fun validateData(){
-        val email = binding.editextEmail.text.toString().trim()
-        val senha = binding.edittextSenha.text.toString().trim()
+        val email = binding.editEmail.text.toString().trim()
+        val senha = binding.editPassword.text.toString().trim()
 
         if (email.isNotBlank()){
             if(senha.isNotBlank()){
                 Toast.makeText(requireContext(), "Tudo OK!", Toast.LENGTH_SHORT).show()
             }else{
-                Toast.makeText(requireContext(), "Preencha uma senha!", Toast.LENGTH_SHORT).show()
+                showBottomSheet(message = R.string.password_empty_register_fragment)
             }
         }else{
-            Toast.makeText(requireContext(), "Preencha um email vpalido!", Toast.LENGTH_SHORT).show()
+            showBottomSheet(message = R.string.email_empty_register_fragment)
         }
     }
 

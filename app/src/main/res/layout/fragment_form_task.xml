@@ -80,6 +80,7 @@
                 android:layout_weight="1"
                 android:buttonTint="@color/white"
                 android:text="A Fazer"
+                android:checked="true"
                 android:textColor="@color/white" />
 
             <RadioButton
