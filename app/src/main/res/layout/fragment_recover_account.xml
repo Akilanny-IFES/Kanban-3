@@ -64,8 +64,7 @@
                 android:layout_marginTop="4dp"
                 android:hint="Digite seu e-mail"
                 android:inputType="textEmailAddress"
-                android:padding="10dp"
-                android:background="@drawable/bg_edit_text"/>
+                style="@style/EditTextTheme"/>
 
 
             <com.google.android.material.button.MaterialButton
