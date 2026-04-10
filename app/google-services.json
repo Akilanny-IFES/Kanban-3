@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "774345228362",
+    "project_id": "kanban-40362",
+    "storage_bucket": "kanban-40362.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774345228362:android:b47a746d34f5e8ecdf26b3",
+        "android_client_info": {
+          "package_name": "com.akilanny.task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDic7KGO7QLF8CcQvwnAHhRCLUE2Fg2pTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
