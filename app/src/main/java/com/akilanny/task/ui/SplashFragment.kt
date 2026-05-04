@@ -10,11 +10,13 @@ import android.os.Looper
 import androidx.navigation.fragment.findNavController
 import com.akilanny.task.R
 import com.akilanny.task.databinding.FragmentSplashBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class SplashFragment : Fragment() {
 
     private var _binding: FragmentSplashBinding? = null
     private val binding get() = _binding!!
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,14 +28,27 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        auth = FirebaseAuth.getInstance()
 
         Handler(Looper.getMainLooper()).postDelayed({
             checkAuth()
         }, 3000)
     }
 
-    private fun checkAuth() {
-        findNavController().navigate(R.id.action_splashFragment3_to_autentication)
+    private fun checkAuth(){
+        try {
+            val currentUser = auth.currentUser
+
+            if (currentUser != null) {
+                findNavController().navigate(resId = R.id.action_splashFragment3_to_homeFragment)
+            }else{
+                findNavController().navigate(resId = R.id.action_splashFragment3_to_autentication)
+            }
+        }catch ( e: Exception){
+            Toast.makeText(context = requireContext(), text = e.message.toString(), duration = Toast.LENGTH_SHORT).show()
+            findNavController().navigate(resId = R.id.action_splashFragment3_to_autentication)
+        }
+
     }
 
     override fun onDestroyView() {
